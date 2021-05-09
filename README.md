@@ -24,7 +24,7 @@ To install dependencies, run the following command:
 
 ```npm install```
 
-This will install mongoose, express libraries which are used in project.
+This will install client and server side libraries which are used in project.
 
 ### Project Deployment / GitHub Details
 
