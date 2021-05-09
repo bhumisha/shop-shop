@@ -1,6 +1,8 @@
 # E-Commerce
 
-    E-Commerce is React Redux application where user can signUp/login then you can purchase products based on categories. Stipe is used to make payment. Whole application is written in React / GraphQL with Redux. It is PWA application. Mainly PWA application allows user to perform operation even if they are not connected to internet (offline).
+    E-Commerce is React Redux application where user can signUp/login then you can purchase products based on categories. 
+    Stipe is used to make payment. Whole application is written in React / GraphQL with Redux.
+    It is PWA application. Mainly PWA application allows user to perform operation even if they are not connected to internet (offline).
     
 
 ### Technology 
