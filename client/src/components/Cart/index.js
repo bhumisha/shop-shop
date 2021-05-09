@@ -2,20 +2,25 @@ import React, { useEffect } from "react";
 import { idbPromise } from "../../utils/helpers"
 import CartItem from "../CartItem";
 import Auth from "../../utils/auth";
-import { useStoreContext } from "../../utils/GlobalState";
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
+// import { useStoreContext } from "../../utils/GlobalState";
+// import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
+import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/reduxActions";
+import { useSelector, useDispatch } from "react-redux";
+
 import "./style.css";
 
 import { QUERY_CHECKOUT } from '../../utils/queries';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/react-hooks';
 
-
-
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 const Cart = () => {
-  const [state, dispatch] = useStoreContext();
+  
+  //const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+  const state = useSelector((state) => state);
+  const dispatch = useDispatch();
+
 
   
   useEffect(() => {

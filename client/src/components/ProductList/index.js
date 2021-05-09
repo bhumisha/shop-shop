@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import ProductItem from "../ProductItem";
-import { useStoreContext } from "../../utils/GlobalState";
-import { UPDATE_PRODUCTS } from "../../utils/actions";
+// import { useStoreContext } from "../../utils/GlobalState";
+// import { UPDATE_PRODUCTS } from "../../utils/actions";
+import { UPDATE_PRODUCTS } from "../../utils/reduxActions";
+import {useSelector,useDispatch } from "react-redux";
 import { QUERY_PRODUCTS } from "../../utils/queries";
 import { useQuery } from '@apollo/react-hooks';
 
@@ -9,7 +11,9 @@ import { idbPromise } from "../../utils/helpers";
 import spinner from "../../assets/spinner.gif"
 
 function ProductList() {
-  const [state, dispatch] = useStoreContext();
+  //const [state, dispatch] = useStoreContext();
+  const state = useSelector((state)=> state);
+  const dispatch = useDispatch();
 
   const { currentCategory } = state;
 
@@ -17,6 +21,7 @@ function ProductList() {
 
   useEffect(() => {
     if(data) {
+      
       dispatch({
         type: UPDATE_PRODUCTS,
         products: data.products
